@@ -7,9 +7,7 @@ it("on init Initialstate is empty", () => {
 });
 
 it("addCity is adding city", () => {
-  expect(
-    reducer(undefined, addCity({ city: "Katowice", temp: 15 }))
-  ).toEqual({
+  expect(reducer(undefined, addCity({ city: "Katowice", temp: 15 }))).toEqual({
     cities: [{ city: "Katowice", temp: 15 }],
   });
 });

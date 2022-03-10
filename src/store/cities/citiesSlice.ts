@@ -10,9 +10,9 @@ interface State {
   cities: Cities[];
 }
 
-const initialState = {
+const initialState: State = {
   cities: [],
-} as State;
+};
 
 const citiesSlice = createSlice({
   name: "cities",
@@ -24,8 +24,8 @@ const citiesSlice = createSlice({
   },
 });
 
-export const { addCity } = citiesSlice.actions
+export const { addCity } = citiesSlice.actions;
 
-export const selectCities = (state: RootState) => state.cities;
+export const selectCities = (state: RootState) => state.cities.cities;
 
 export default citiesSlice.reducer;

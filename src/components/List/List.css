@@ -4,8 +4,22 @@
   color: black;
 }
 
+.list-empty {
+  background-color: white;
+  height: 60vh;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+
 @media screen and (max-width: 760px){
     .list { 
+      min-height: 100vh;
+    }
+    
+    .list-empty {
       min-height: 100vh;
     }
 }
