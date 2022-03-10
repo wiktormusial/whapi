@@ -1,5 +1,15 @@
 .container {
   display: flex;
+  min-width: 50vw;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 760px){
+    .container { 
+      width: 100vw; 
+      margin: 0;
+      padding: 0;
+    } 
 }
 
 .searchbar {

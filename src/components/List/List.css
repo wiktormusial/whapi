@@ -1,0 +1,40 @@
+.list { 
+  margin-top: 0;
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 760px){
+    .list { 
+      min-height: 100vh;
+    }
+}
+
+.list-cities {
+  margin-top: 0;
+  padding: 15px;
+  list-style: none;
+}
+
+.list-element {
+  display: flex;
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid black
+}
+
+.list-element:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.list-icon {
+  color: #FFB03B;
+}
+
+.list-city {
+  flex-grow: 4;
+}
