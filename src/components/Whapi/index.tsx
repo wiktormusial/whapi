@@ -1,5 +1,7 @@
+import SearchBar from "../SearchBar";
+
 const Whapi = () => {
-  return <div>Whapi</div>;
+  return <SearchBar /> 
 };
 
 export default Whapi;

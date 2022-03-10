@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+
+.searchbar {
+  padding: 15px;
+  font-size: 20px;
+  width: 100%;
+  float: left;
+  border: 0
+}
+
+.searchbar:focus {
+  outline: none;
+}
+
+.searchbutton {
+  border: 0;
+  background-color: #FD7400; 
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.searchbutton:active {
+  background-color: #FF5C22; 
+}
