@@ -1,5 +1,5 @@
 .list { 
-  margin-top: 0;
+  margin-top: 0px;
   background-color: #FAFAFA;
   color: black;
 }
@@ -9,7 +9,7 @@
   height: 60vh;
   font-size: 30px;
   display: flex;
-  padding: 15px;
+  padding: 0 15px 15px 15px;
   align-items: center;
   justify-content: center;
   color: gray;
@@ -27,8 +27,8 @@
 
 .list-cities {
   margin-top: 0;
-  padding: 15px;
   list-style: none;
+  padding: 0 15px 15px 15px;
 }
 
 .list-element {
@@ -52,4 +52,10 @@
 
 .list-city {
   flex-grow: 4;
+  justify-content: center;
+}
+
+.list-temp {
+  min-width: 25%;
+  text-align: right;
 }

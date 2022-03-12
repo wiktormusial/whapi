@@ -26,6 +26,7 @@ const Error = () => {
 
   return (
     <div className={classes} data-testid="error">
+      <div className="error-message">{errorMessage}</div>
       <div className="error-close">
         <BsXLg
           onClick={() => {
@@ -35,7 +36,6 @@ const Error = () => {
           className="error-icon"
         />
       </div>
-      <div className="error-message">{errorMessage}</div>
     </div>
   );
 };

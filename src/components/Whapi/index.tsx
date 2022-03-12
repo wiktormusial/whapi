@@ -6,8 +6,8 @@ import Error from "../Error";
 const Whapi = () => {
   return (
     <Wrapper>
+      <Error/>
       <SearchBar />
-      <Error />
       <List />
     </Wrapper>
   );
