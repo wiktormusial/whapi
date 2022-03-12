@@ -11,6 +11,12 @@ interface Cities {
   id: number;
   city: string;
   temp: number;
+  country: string;
+  feel_like: number;
+  temp_min: number;
+  temp_max: number;
+  wind_speed: number;
+  description: string;
 }
 
 interface State {
@@ -35,13 +41,8 @@ const citiesSlice = createSlice({
   initialState,
   reducers: {
     addCity: (state, action: PayloadAction<Cities>) => {
-      const id =
-        state.cities.reduce((maxId, city) => Math.max(city.id!, maxId), -1) + 1;
-
       state.cities.push({
-        id: id,
-        city: action.payload.city,
-        temp: action.payload.temp,
+        ...action.payload,
       });
     },
     createError: (state, action: PayloadAction<string>) => {
@@ -57,14 +58,27 @@ const citiesSlice = createSlice({
     builder.addCase(fetchCity.fulfilled, (state, action) => {
       const id =
         state.cities.reduce((maxId, city) => Math.max(city.id!, maxId), -1) + 1;
-      const cityName = action.payload.name;
-      const temp = action.payload.main.temp;
+
+      const { name } = action.payload;
+      const { feel_like, temp, temp_max, temp_min } = action.payload.main;
+      const { country } = action.payload.sys;
+      const { speed } = action.payload.wind;
 
       if (state.error) {
         state.error = null;
       }
 
-      state.cities.push({ id: id, city: cityName, temp: temp });
+      state.cities.push({
+        id: id,
+        city: name,
+        temp: temp,
+        description: action.payload.weather[0].description,
+        country: country,
+        temp_min: temp_min,
+        temp_max: temp_max,
+        feel_like: feel_like,
+        wind_speed: speed,
+      });
     });
     builder.addCase(fetchCity.rejected, (state, action) => {
       state.error = action.error;
