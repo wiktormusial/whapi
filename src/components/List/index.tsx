@@ -2,6 +2,7 @@ import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectCities } from "../../store/cities/citiesSlice";
 import ListElement from "./ListElement";
 import ListEmpty from "./ListEmpty";
+import Error from "../Error";
 import "./List.css";
 
 const List = () => {
@@ -10,6 +11,7 @@ const List = () => {
   if (cities.length !== 0) {
     return (
       <div className="list">
+        <Error />
         <ul className="list-cities">
           {cities.map((item) => (
             <ListElement key={item.id} id={item.id} />
@@ -18,7 +20,11 @@ const List = () => {
       </div>
     );
   } else {
-    return <ListEmpty />;
+    return (
+      <>
+        <ListEmpty />
+      </>
+    );
   }
 };
 

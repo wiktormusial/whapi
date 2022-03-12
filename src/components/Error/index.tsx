@@ -39,7 +39,7 @@ const Error = () => {
         <BsXLg
           onClick={async () => {
             dispatch(clearError());
-            await gsap.to(messRef.current, { opacity: 0 }).duration(0.5);
+            await gsap.to(messRef.current, { opacity: 0 }).duration(0.2);
             messRef.current!.style.opacity = "100%";
             setShowError(!setShowError);
           }}

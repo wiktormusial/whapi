@@ -1,4 +1,7 @@
 .error-default {
+  color: white;
+  position: relative;
+  width: inherit;
   background-color: #ef5350;  
   padding: 15px 15px 15px 15px;
   display: flex;
