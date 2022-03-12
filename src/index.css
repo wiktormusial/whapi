@@ -17,6 +17,7 @@ body {
     body { 
       justify-content: start;
       align-items: start;
+      background-color: #FAFAFA;
     }
 }
 
