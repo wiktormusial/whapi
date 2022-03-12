@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../hooks/redux/hooks";
 import { BsSearch } from "react-icons/bs";
-import { fetchCity } from "../../store/cities/citiesSlice";
+import { fetchCity, createError } from "../../store/cities/citiesSlice";
 import "./SearchBar.css";
 
 const SearchBar = () => {
@@ -10,7 +10,7 @@ const SearchBar = () => {
 
   const handleSumbit = () => {
     if (userCity.trim() === "") {
-      console.error("Empty string");
+      dispatch(createError("Empty string"));
     } else {
       dispatch(fetchCity(userCity));
     }
