@@ -8,7 +8,7 @@ import type { RootState } from "../store";
 import getCityTemp from "../../api/getCityTemp";
 
 interface Cities {
-  id?: number;
+  id: number;
   city: string;
   temp: number;
 }
@@ -75,6 +75,9 @@ const citiesSlice = createSlice({
 export const { addCity, createError, clearError } = citiesSlice.actions;
 
 export const selectCities = (state: RootState) => state.cities.cities;
+export const selectCityById = (state: RootState, Id: number) => {
+  return state.cities.cities.find((item) => item.id === Id);
+};
 export const selectError = (state: RootState) => state.cities.error?.message;
 
 export default citiesSlice.reducer;

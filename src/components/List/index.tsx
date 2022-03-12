@@ -11,8 +11,9 @@ const List = () => {
     return (
       <div className="list">
         <ul className="list-cities">
-          <ListElement />
-          <ListElement />
+          {cities.map((item) => (
+            <ListElement key={item.id} id={item.id} />
+          ))}
         </ul>
       </div>
     );
