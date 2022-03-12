@@ -1,4 +1,4 @@
-import reducer, { addCity } from "../citiesSlice";
+import reducer, { addCity, createError } from "../citiesSlice";
 
 it("addCity is adding city", () => {
   expect(reducer(undefined, {})).toEqual({
@@ -14,5 +14,14 @@ it("addCity is adding city", () => {
   ).toEqual({
     cities: [{ city: "Katowice", temp: 15 }],
     error: null,
+  });
+});
+
+it("createError creates Error", () => {
+  const previuosState = { error: null, cities: [] };
+  console.log('test')
+  expect(reducer(previuosState, createError("Blank input"))).toEqual({
+    cities: [],
+    error: { message: "Blank input" },
   });
 });

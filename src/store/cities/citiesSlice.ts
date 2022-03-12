@@ -36,6 +36,11 @@ const citiesSlice = createSlice({
     addCity: (state, action: PayloadAction<Cities>) => {
       state.cities.push(action.payload);
     },
+    createError: (state, action: PayloadAction<string>) => {
+      state.error = {
+        message: action.payload,
+      };
+    },
     clearError: (state) => {
       state.error = null;
     },
@@ -57,7 +62,7 @@ const citiesSlice = createSlice({
   },
 });
 
-export const { addCity, clearError } = citiesSlice.actions;
+export const { addCity, createError, clearError } = citiesSlice.actions;
 
 export const selectCities = (state: RootState) => state.cities.cities;
 export const selectError = (state: RootState) => state.cities.error?.message;
