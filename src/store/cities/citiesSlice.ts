@@ -8,6 +8,7 @@ import type { RootState } from "../store";
 import getCityTemp from "../../api/getCityTemp";
 
 interface Cities {
+  id?: number;
   city: string;
   temp: number;
 }
@@ -34,7 +35,14 @@ const citiesSlice = createSlice({
   initialState,
   reducers: {
     addCity: (state, action: PayloadAction<Cities>) => {
-      state.cities.push(action.payload);
+      const id =
+        state.cities.reduce((maxId, city) => Math.max(city.id!, maxId), -1) + 1;
+
+      state.cities.push({
+        id: id,
+        city: action.payload.city,
+        temp: action.payload.temp,
+      });
     },
     createError: (state, action: PayloadAction<string>) => {
       state.error = {
@@ -47,6 +55,8 @@ const citiesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCity.fulfilled, (state, action) => {
+      const id =
+        state.cities.reduce((maxId, city) => Math.max(city.id!, maxId), -1) + 1;
       const cityName = action.payload.name;
       const temp = action.payload.main.temp;
 
@@ -54,7 +64,7 @@ const citiesSlice = createSlice({
         state.error = null;
       }
 
-      state.cities.push({ city: cityName, temp: temp });
+      state.cities.push({ id: id, city: cityName, temp: temp });
     });
     builder.addCase(fetchCity.rejected, (state, action) => {
       state.error = action.error;

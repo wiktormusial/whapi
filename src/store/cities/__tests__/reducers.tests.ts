@@ -12,14 +12,13 @@ it("addCity is adding city", () => {
   expect(
     reducer(previuosState, addCity({ city: "Katowice", temp: 15 }))
   ).toEqual({
-    cities: [{ city: "Katowice", temp: 15 }],
+    cities: [{ id: 0, city: "Katowice", temp: 15 }],
     error: null,
   });
 });
 
 it("createError creates Error", () => {
   const previuosState = { error: null, cities: [] };
-  console.log('test')
   expect(reducer(previuosState, createError("Blank input"))).toEqual({
     cities: [],
     error: { message: "Blank input" },
