@@ -1,5 +1,5 @@
 # Whapi
-[https://main.d4nx6rkq5e301.amplifyapp.com/](Live preview).
+[Live preview](https://main.d4nx6rkq5e301.amplifyapp.com/)
 
 ## Available Scripts
 
