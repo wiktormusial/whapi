@@ -50,10 +50,6 @@
   background-color: #f5f5f5;
 }
 
-.list-icon {
-  color: #FFB03B;
-}
-
 .list-city {
   flex-grow: 4;
   justify-content: center;
@@ -72,4 +68,7 @@
 
 .card-footer {
   width: 100%;
+}
+
+.list-icon {
 }

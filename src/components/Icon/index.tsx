@@ -46,7 +46,14 @@ const Icon: React.FC<Props> = ({ weather }) => {
     "50n": <BsCloudFogFill />,
   };
 
-  return <div data-testid={weather}>{icons[`${weather}`]}</div>;
+  return (
+    <div data-testid={weather}>
+      <img
+        className="list-icon"
+        src={`http://openweathermap.org/img/wn/${weather}.png`}
+      />
+    </div>
+  );
 };
 
 export default Icon;

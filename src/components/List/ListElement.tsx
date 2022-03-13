@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { BsSun } from "react-icons/bs";
 import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectCityById } from "../../store/cities/citiesSlice";
+import Icon from "../Icon";
 import ListElementDetail from "./ListElementDetail";
 import roundTemp from "../../utils/roundTemp/roundTemp";
 
@@ -30,8 +30,8 @@ const ListElement: React.FC<Props> = ({ id }) => {
           setShowDetail(!showDetail);
         }}
       >
-        <div className="list-icon">
-          <BsSun />
+        <div>
+          <Icon weather={city!.icon} />
         </div>
         <div className="list-city">{city?.city}</div>
         <div className="list-temp">{roundTemp(city!.temp)}°C</div>
