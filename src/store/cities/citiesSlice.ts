@@ -45,6 +45,9 @@ const citiesSlice = createSlice({
         ...action.payload,
       });
     },
+    deleteCity: (state, action: PayloadAction<number>) => {
+      state.cities = state.cities.filter((item) => item.id !== action.payload);
+    },
     createError: (state, action: PayloadAction<string>) => {
       state.error = {
         message: action.payload,
@@ -86,7 +89,8 @@ const citiesSlice = createSlice({
   },
 });
 
-export const { addCity, createError, clearError } = citiesSlice.actions;
+export const { addCity, deleteCity, createError, clearError } =
+  citiesSlice.actions;
 
 export const selectCities = (state: RootState) => state.cities.cities;
 export const selectCityById = (state: RootState, Id: number) => {
