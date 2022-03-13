@@ -1,10 +1,10 @@
 .error-default {
   color: white;
-  position: relative;
-  width: inherit;
+  position: sticky;
   background-color: #ef5350;  
   padding: 15px 15px 15px 15px;
   display: flex;
+  z-index: 10;
 }
 
 .error-close {

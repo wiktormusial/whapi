@@ -6,7 +6,9 @@ const ListEmpty = () => {
     <>
       <div className="list" data-testid="list-empty">
         <Error />
-        <div className="list-empty">List is empty, add some cities above</div>
+        <div className="list-empty">
+        List is empty, add some cities above
+      </div>
       </div>
     </>
   );
