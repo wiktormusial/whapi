@@ -17,6 +17,7 @@ export interface Cities {
   temp_max: number;
   wind_speed: number;
   description: string;
+  icon: string;
 }
 
 interface State {
@@ -66,6 +67,7 @@ const citiesSlice = createSlice({
       const { feels_like, temp, temp_max, temp_min } = action.payload.main;
       const { country } = action.payload.sys;
       const { speed } = action.payload.wind;
+      const { description, icon } = action.payload.weather[0];
 
       if (state.error) {
         state.error = null;
@@ -75,11 +77,12 @@ const citiesSlice = createSlice({
         id: id,
         city: name,
         temp: temp,
-        description: action.payload.weather[0].description,
+        description: description,
         country: country,
         temp_min: temp_min,
         temp_max: temp_max,
         feels_like: feels_like,
+        icon: icon,
         wind_speed: speed,
       });
     });
