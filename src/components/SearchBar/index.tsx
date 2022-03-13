@@ -18,13 +18,13 @@ const SearchBar = () => {
 
   return (
     <div className="container">
-      <input
-        type="text"
-        className="searchbar"
-        data-testid="search-bar"
-        placeholder="Type your city"
-        onChange={(e) => setUserCity(e.target.value)}
-      />
+        <input
+          type="text"
+          className="searchbar"
+          data-testid="search-bar"
+          placeholder="Type your city"
+          onChange={(e) => setUserCity(e.target.value)}
+        />
       <button
         onClick={() => handleSumbit()}
         className="searchbutton"
