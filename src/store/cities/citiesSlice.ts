@@ -7,12 +7,12 @@ import {
 import type { RootState } from "../store";
 import getCityTemp from "../../api/getCityTemp";
 
-interface Cities {
+export interface Cities {
   id: number;
   city: string;
   temp: number;
   country: string;
-  feel_like: number;
+  feels_like: number;
   temp_min: number;
   temp_max: number;
   wind_speed: number;
@@ -60,7 +60,7 @@ const citiesSlice = createSlice({
         state.cities.reduce((maxId, city) => Math.max(city.id!, maxId), -1) + 1;
 
       const { name } = action.payload;
-      const { feel_like, temp, temp_max, temp_min } = action.payload.main;
+      const { feels_like, temp, temp_max, temp_min } = action.payload.main;
       const { country } = action.payload.sys;
       const { speed } = action.payload.wind;
 
@@ -76,7 +76,7 @@ const citiesSlice = createSlice({
         country: country,
         temp_min: temp_min,
         temp_max: temp_max,
-        feel_like: feel_like,
+        feels_like: feels_like,
         wind_speed: speed,
       });
     });

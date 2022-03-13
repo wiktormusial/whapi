@@ -1,10 +1,22 @@
 import axios from "axios";
 
 interface GetCityTemp {
-    name: string;
-    main: {
-      temp: number;
-    };
+  name: string;
+  weather: {
+    description: string;
+  } [];
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+  };
+  sys: {
+    country: string;
+  };
+  wind: {
+    speed: number;
+  };
 }
 
 const getCityTemp = async (city: string) => {
