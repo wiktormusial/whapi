@@ -1,6 +1,7 @@
 import React from "react";
 import { countryCodeEmoji } from "country-code-emoji";
-import { Cities } from "../../store/cities/citiesSlice";
+import { useAppDispatch } from "../../hooks/redux/hooks";
+import { Cities, deleteCity } from "../../store/cities/citiesSlice";
 import roundTemp from "../../utils/roundTemp/roundTemp";
 
 interface Props {
@@ -8,6 +9,12 @@ interface Props {
 }
 
 const ListElementDetail: React.FC<Props> = ({ city }) => {
+  const dispatch = useAppDispatch();
+
+  const handleUserClick = (id: number) => {
+    dispatch(deleteCity(id));
+  };
+
   return (
     <div className="list-city-detail">
       <div className="card-header">
@@ -39,7 +46,9 @@ const ListElementDetail: React.FC<Props> = ({ city }) => {
         </tbody>
       </table>
       <div className="card-footer">
-        <span className="link link-remove">Remove city</span>
+        <span className="link link-remove" onClick={() => handleUserClick(city.id)}>
+          Remove city
+        </span>
       </div>
     </div>
   );
