@@ -48,4 +48,9 @@ code {
   text-align: right;
 }
 
+.link-remove {
+  color: #f44336;
+  text-decoration: underline;
+  cursor: pointer;
+}
 

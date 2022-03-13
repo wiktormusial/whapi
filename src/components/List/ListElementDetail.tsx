@@ -38,6 +38,9 @@ const ListElementDetail: React.FC<Props> = ({ city }) => {
           </tr>
         </tbody>
       </table>
+      <div className="card-footer">
+        <span className="link link-remove">Remove city</span>
+      </div>
     </div>
   );
 };

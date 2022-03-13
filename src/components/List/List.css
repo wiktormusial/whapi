@@ -70,3 +70,6 @@
   box-shadow: inset 0px 0px 5px -3px rgba(66, 68, 90, 1);
 }
 
+.card-footer {
+  width: 100%;
+}
